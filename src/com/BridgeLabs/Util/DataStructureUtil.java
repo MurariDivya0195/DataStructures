@@ -1,6 +1,8 @@
 package com.BridgeLabs.Util;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 public class DataStructureUtil {
 	public static void main(String[] args) throws Exception  {
@@ -83,6 +85,99 @@ public class DataStructureUtil {
     }
 
 	
+	/***********************************************************************************************************
+	leap year	
+	******************************************************************************/
+	
+	public static int day(int month, int day, int year){
+		int y= year-(14-month)/12;
+		int x=y+y/4-y/100+y/400;
+		int m= month+12*((14-month)/12)-2;
+		int d=(day+ x+(31*m)/12)%7;
+		return d;
+	}	
+		
+		// return true if the given year is leap year
+		
+		public static boolean isLeapyear(int year)
+		{
+			if((year%4==0) && (year%100!=0))
+			return true;
+			if(year%400==0)
+				return true;
+			return false;
+		}
+		
+		// LOGIC TO PRINT ANAGRAM
+		public static boolean isAnagram(char[] s1, char[] s2) {
+			// TODO Auto-generated method stub
+
+			int n1 = s1.length;
+			int n2 = s2.length;
+			if (n1 != n2)
+				return false;
+
+			Arrays.sort(s1);
+			Arrays.sort(s2);
+
+			for (int i = 0; i < n1; i++)
+				if (s1[i] != s2[i])
+					return false;
+			return true;
+
+		}
+
+		// logic TO PRINT THE PRIME NUMBERS
+
+		public static List<Integer> primeNumber(int n) {
+			List<Integer> a = new ArrayList<>();
+			int i, j, k;
+			for (i = 2; i <= n; i++) {
+				k = 0;
+				for (j = 2; j < i; j++) {
+					if (i % j == 0) {
+						k = 1;
+						break;
+					}
+				}
+
+				if (k == 0) {
+					a.add(i);
+				}
+
+			}
+			return a;
+
+		}
+
+
+		public static List<Integer> isAnagram(List<Integer> primes) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		// Logic to print the binary tree
+		
+		public static int binominalCoeff(int n, int k)
+		{
+			int res=1;
+			if(k>n-k)
+				k=n-k;
+			for(int i=0;i<k;++i){
+				res *=(n-1);
+				res /=(i+1);
+			}
+			
+			return res;
+		}
+		
+		public static int binaryCount(int n){
+			
+			int c=binominalCoeff(2*n,n);
+			int count=c/(n+1);
+			return count;
+		}
+	}
 	
 	
 	
@@ -108,7 +203,5 @@ public class DataStructureUtil {
 	
 	
 	
-	
-	
-}
+
 	
