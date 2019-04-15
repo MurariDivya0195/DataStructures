@@ -1,7 +1,5 @@
 package com.BridgeLabs.DataStructures;
 
-import java.util.Scanner;
-
 import com.BridgeLabs.Util.NodeUtility;
 import com.BridgeLabs.Util.OrderredLinkedList;
 

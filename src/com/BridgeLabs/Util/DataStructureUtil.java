@@ -1,55 +1,9 @@
 package com.BridgeLabs.Util;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 public class DataStructureUtil {
-	public static void main(String[] args) throws Exception  {
-		ArrayList<String> arrayList = new ArrayList<String>();
-		File file =new File("C:\\Users\\DIVYA.M\\Documents\\TTT\\Hello.txt");
-		Scanner sc = new Scanner(file);
-		System.out.println("enter the String to add in the text file");
-		Scanner input = new Scanner(System.in);
-		String str=input.next();
-		while(sc.hasNext())
-				{
-				
-				arrayList.add(sc.next());
-	}
-		
-		for(String s:arrayList)
-		{
-			System.out.println(s);
-		}
-		
-		
-		
-		arrayList.remove("divya");
-		System.out.println("Now the size of the arrayList:" + arrayList.size());
-	//let us print all the available values in the list
-		
-		/*for(String s1 : arrayList)
-		{
-			System.out.println(s1);
-		}
-		*/
-		if(arrayList.contains(str))
-		{
-			arrayList.remove(str);
-		}
-		
-		else
-			arrayList.add(str);
-		
-	
-		
-	for(String s1 : arrayList)
-	{
-		System.out.println(s1);
-	}
-	}
-	
 	
 	/****************************************************************************************************************
 	 * LOGIC TO BALANCED PARENTHESIS
@@ -107,24 +61,49 @@ public class DataStructureUtil {
 				return true;
 			return false;
 		}
-		
-		// LOGIC TO PRINT ANAGRAM
-		public static boolean isAnagram(char[] s1, char[] s2) {
-			// TODO Auto-generated method stub
+		public static List<Integer> primeAnagrams(List<Integer> primes) {
+			List<Integer> anagram= new ArrayList<Integer>();
+			for (int i = 0; i < primes.size(); i++) {
+				for (int j = i + 1; j < primes.size(); j++) {
 
-			int n1 = s1.length;
-			int n2 = s2.length;
-			if (n1 != n2)
+					if (isAnagram(primes.get(i), primes.get(j))) {
+						System.out.println(primes.get(i) + " " + primes.get(j));
+						anagram.add(primes.get(i));
+						anagram.add(primes.get(j));
+					}
+				}
+			}
+			return anagram;
+		}
+
+		// CHECKING THE ANAGRAMS OF THE NUMBERS
+
+		public static boolean isAnagram(int n1, int n2) {
+			int[] num1 = intArray(n1);
+			int[] num2 = intArray(n2);
+			if (num1.length != num2.length)
 				return false;
-
-			Arrays.sort(s1);
-			Arrays.sort(s2);
-
-			for (int i = 0; i < n1; i++)
-				if (s1[i] != s2[i])
-					return false;
+			else {
+				for (int i = 0; i < num1.length; i++) {
+					if (num1[i] != num2[i])
+						return false;
+				}
+			}
 			return true;
+		}
 
+		// logic to print the count 
+		public static int[] intArray(int n1) {
+			int[] count = new int[10];
+			int temp = n1;
+			while (temp != 0) {
+				int r = temp % 10;
+
+				count[r]++;
+				temp = temp / 10;
+			}
+
+			return count;
 		}
 
 		// logic TO PRINT THE PRIME NUMBERS
@@ -151,11 +130,7 @@ public class DataStructureUtil {
 		}
 
 
-		public static List<Integer> isAnagram(List<Integer> primes) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
+		
 		// Logic to print the binary tree
 		
 		public static int binominalCoeff(int n, int k)
@@ -177,6 +152,38 @@ public class DataStructureUtil {
 			int count=c/(n+1);
 			return count;
 		}
+		
+		
+	// Logics to Write Read the input from scanner 
+		
+		static Scanner scanner1=new Scanner(System.in); //scanner class declaration
+
+		//method for scanner class of integer type 
+		/**
+		 * static function to read integers input from the user
+		 * @return integer values that are read
+		 */
+		public static int readInteger() {
+			return scanner1.nextInt();}
+
+		//method for scanner class of double type 
+		/**
+		 * static function to read double input from the user
+		 * @return double values that are read
+		 */
+		public static double readdouble() {
+			return scanner1.nextDouble();}
+
+		//method for scanner class of String type 
+		/**
+		 * static function to read string input from the user
+		 * @param file 
+		 * @return strings that are read
+		 */
+		public static String readString() {
+			return scanner1.next();}
+		
+		
 	}
 	
 	

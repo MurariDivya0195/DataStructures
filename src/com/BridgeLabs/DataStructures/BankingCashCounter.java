@@ -8,6 +8,7 @@ public class BankingCashCounter {
 
 	public static void main(String[] args) {
 
+
 		System.out.println("enter the amount to be Withdraw");
 		Scanner input = new Scanner(System.in);
 		int amount = input.nextInt();

@@ -1,0 +1,67 @@
+{
+"Pulses" : [{ 
+			"name" : "pulses",
+			"weight":50,
+			"price":"300"},
+			
+			{
+			
+			  "name":"Pulses2",
+			  "weight":30,
+			  "price":"500"
+			
+			},
+			
+			{
+			
+			  "name":"Pulses3",
+			  "weight":50,
+			  "price":"500"
+			
+			}],
+			
+		
+"Rice" : [{ 
+			"name" : "rice",
+			"weight":50,
+			"price":"300"},
+			
+			{
+			
+			  "name":"rice2",
+			  "weight":30,
+			  "price":"500"
+			
+			},
+			
+			{
+			
+			  "name":"rice3",
+			  "weight":50,
+			  "price":"500"
+			
+			}],
+			
+		
+		"Wheats" : [{ 
+			"name" : "wheats",
+			"weight":50,
+			"price":"300"},
+			
+			{
+			
+			  "name":"wheats2",
+			  "weight":30,
+			  "price":"500"
+			
+			},
+			
+			{
+			
+			  "name":"wheats3",
+			  "weight":50,
+			  "price":"500"
+			
+			}]
+			
+}
