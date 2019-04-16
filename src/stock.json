@@ -1,0 +1,17 @@
+[
+     {
+       "name" : "aerospace",
+		"share":10,
+		"sharePrice":500		
+ 	},
+	{
+		"name" : "electricity",
+		"share":10,
+		"sharePrice":500
+	},
+   	 {
+		"name" : "electricity",
+		"share":10,
+		"sharePrice":500
+	}
+]
