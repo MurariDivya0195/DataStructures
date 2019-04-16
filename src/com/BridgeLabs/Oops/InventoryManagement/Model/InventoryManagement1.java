@@ -36,6 +36,7 @@ public class InventoryManagement1 {
 			imp.add(name, weight, price);
 			imp.calculateInventory();
 			imp.writeFile();
+			imp.remove();
 			
 			/* inventaryImp.add(name,weight); */
 			//            imp.writeFile(name, weight, price);

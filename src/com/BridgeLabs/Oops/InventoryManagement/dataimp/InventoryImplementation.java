@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -113,8 +114,13 @@ public class InventoryImplementation implements InventoryInterface {
 	}
 
 	@Override
-	public void remove(String name, double weight) {
-		// TODO Auto-generated method stub
-
+	public void remove() {
+		fileRead();
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter which elements to be removed :");
+		String removeele=sc.nextLine();
+		inventories.removeIf(inventory -> inventory.getName().equals(removeele));
+		writeFile();
+		System.out.println("SuccessFully Removed the Elements From The List");
 	}
 }
