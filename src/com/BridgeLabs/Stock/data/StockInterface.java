@@ -4,7 +4,7 @@ public interface StockInterface {
 
 	public void readFile();
 	
-	public void calculateTotal(String name, Long share, Long price);
+	public void calculateTotal();
 	
 	public void writeFile();
 	

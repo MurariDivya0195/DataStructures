@@ -9,6 +9,7 @@ public class stockManagement {
 	   
 	   StockImplementation stockimpl= new StockImplementation();
 	   stockimpl.readFile();
+	   stockimpl.calculateTotal();
 	   
 	
 }

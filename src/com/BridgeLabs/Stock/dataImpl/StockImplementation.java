@@ -17,12 +17,13 @@ import com.BridgeLabs.Stock.modal.StockPojo;
 
 public class StockImplementation implements StockInterface{
 
+	List<StockPojo> stocklist = new ArrayList<>();
+
 	@Override
 	public void readFile() {
 		
 		JSONArray jsonArray;
-		List<StockPojo> stocklist = new ArrayList<>();
-
+		
 		JSONObject jobject = new JSONObject();
 
 		
@@ -48,7 +49,7 @@ public class StockImplementation implements StockInterface{
 						// System.out.println(inventory.getWeight());
 						
 						// System.out.println(inventory.getPrice());
-						
+						stocklist.add(stock);
 
 						System.out.println(stock.toString());
 					}
@@ -72,10 +73,17 @@ public class StockImplementation implements StockInterface{
 	
 
 	@Override
-	public void calculateTotal(String name, Long share, Long price) {
-		// TODO Auto-generated method stub
+	public void calculateTotal() {
 		
-	}
+		//System.out.println("--->>"+stockList);
+		stocklist.forEach(stocks -> {
+					System.out.println("Ttal share of " + stocks.getStockName() + "is" +(stocks.getStockShares()*stocks.getPrice()));
+				});
+				//System.out.println("===>"+stockList);
+
+			}
+		
+
 
 	@Override
 	public void writeFile() {
